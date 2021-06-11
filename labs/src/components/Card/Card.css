@@ -1,0 +1,15 @@
+.card {
+    width: 420px;
+    height: 200px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.card__img {
+    display: inline-block;
+    width: 200px;
+    height: auto;
+}

@@ -1,13 +1,23 @@
 import React from 'react';
-import Card from '../Card/index';
-import data from '../../data/data.json';
+import './Article';
+import PropTypes from 'prop-types';
 
-function Article () {
-    const card = data.map((el, index) => <Card src={el.imageUrl} key={index} title={el.title} />);
+function Article ({ title, img, description, commentName, сomment }) {
     return (
-        <div>
-         {card}
+        <div className="container">
+            <div>{title}</div>
+            <img src={img}></img>
+            <div>{description}</div>
+            <h2>{commentName}</h2>
+            {сomment}
         </div>
-    );
+    ) 
 }
+Article.propTypes = {
+    img: PropTypes.any.isRequired,
+    title: PropTypes.string,
+    description: PropTypes.string,
+    commentName: PropTypes.string,
+    сomment: PropTypes.string
+};
 export default Article;
