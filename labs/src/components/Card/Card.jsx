@@ -1,23 +1,25 @@
 import React from 'react';
-import './Card.css';
-import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
+import './Card.css';
+import Col from 'react-bootstrap/Col';
+import PropTypes from 'prop-types';
 
-function Card ({ id, img, title, link }) {
-    return (
-        <NavLink to={`/articles/${id}`}>
-            <div className="card">
-                <img className="card__img" src={img} alt="img"></img>
-                    <div>{title}</div>
-                <p to={link} className="link"></p>
-            </div>
-        </NavLink>
-    );
-}
+const Card = (props) => {
+  const { id, imageUrl, title } = props.data;
+  return (
+    <NavLink to={`/article/${id}`}>
+      <Col className='card'>
+        <img className='card__img' src={imageUrl} alt='image'></img>
+        <div className='card__title'>{title}</div>
+      </Col>
+    </NavLink>
+  );
+};
+
 Card.propTypes = {
-    img: PropTypes.string,
+    imageUrl: PropTypes.string,
     title: PropTypes.string,
     id: PropTypes.number,
-    link: PropTypes.string
+    data: PropTypes.object
 };
 export default Card;

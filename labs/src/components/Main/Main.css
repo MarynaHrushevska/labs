@@ -1,0 +1,8 @@
+.main-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 40px 30px 0 30px;
+  align-items: center;
+  text-align: center;
+  background-color: #839695;
+}

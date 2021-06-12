@@ -1,19 +1,16 @@
 import React from 'react';
 import Card from '../Card';
-import data from '../../data/data.json';
+import './Main.css';
+import PropTypes from 'prop-types';
 
-function Main () {
-    return (
-        <div>
-            {data.map((card) => (
-                <Card 
-                src={card.img}
-                title={card.description} 
-                {...card}
-                key={card.id}
-                />
-            ))}
-        </div>
-    )
-}
+const Main = (props) => {
+  const createCard = () => {
+    return props.data.map((el) => <Card data={el} key={el.description} />);
+  };
+  return <div className='main-wrapper'>{createCard()}</div>;
+};
+Main.propTypes = {
+    description: PropTypes.string,
+    data: PropTypes.array,
+};
 export default Main;
